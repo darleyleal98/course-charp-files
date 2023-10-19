@@ -1,0 +1,37 @@
+﻿using System;
+using System.IO;
+
+namespace Files
+{
+    public class Progam
+    {
+        static void Main(string[] args)
+        {
+            string sourcePath = @"C:\Users\darle\Desktop\Teste\file1.txt";
+            string targetPath = @"C:\Users\darle\Desktop\Teste\file2.txt";
+
+            try
+            {
+                // Manipula dados separadamente
+
+                string[] lines = File.ReadAllLines(sourcePath);
+
+                using(StreamWriter sw = File.AppendText(targetPath))
+                {
+                    foreach (string line in lines)
+                    {
+                        sw.WriteLine(line.ToUpper()); // Modifica os dados para maiúsculo
+                    }
+                }
+            }
+            catch (IOException exception)
+            {
+                Console.WriteLine(exception.Message);
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception.Message);
+            }
+        }
+    }
+}

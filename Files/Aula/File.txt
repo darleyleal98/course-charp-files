@@ -1,0 +1,30 @@
+﻿using System;
+using System.IO;
+
+namespace Files
+{
+    public class Progam
+    {
+        static void Main(string[] args)
+        {
+            string sourcePath = @"C:\Users\darle\Desktop\Teste\file1.txt";
+            string targetPath = @"C:\Users\darle\Desktop\Teste\file2.txt";
+
+            string file = @"C:\Users\darle\Desktop\Atividade Extensionista II - Projeto, Trabalho final - Darley Leal - 4102341.pdf";
+            try
+            {
+                FileInfo fileInfo = new FileInfo(file);
+
+                string[] lines = File.ReadAllLines(file);
+                foreach (string line in lines)
+                {
+                    Console.WriteLine(line);
+                }
+            }
+            catch(IOException exception)
+            {
+                Console.WriteLine($"An error ocurred: {exception.Message}");
+            }
+        }
+    }
+}
