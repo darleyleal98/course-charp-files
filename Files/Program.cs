@@ -3,7 +3,6 @@
 using System.IO;
 using System.Collections.Generic;
 =======
->>>>>>> 67abd9058ef1b4935003c020ce66037304b1e0da
 
 namespace Files
 {
@@ -40,8 +39,6 @@ namespace Files
                 Console.WriteLine(exception.Message);
             }
 =======
-
->>>>>>> 67abd9058ef1b4935003c020ce66037304b1e0da
         }
     }
 }
